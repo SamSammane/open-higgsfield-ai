@@ -1,49 +1,49 @@
+/*  Theomax Variables — Maps legacy CSS vars to Theomax design tokens.
+ *  Import theomax-tokens.css FIRST, then this file bridges old component code. */
+
+@import './theomax-tokens.css';
+
 :root {
-  /* Brand Colors */
-  --color-primary: #d9ff00;
-  /* Neon Yellow-Green (Higgsfield Nano) */
-  --color-primary-hover: #c4e600;
-  --color-accent: #a855f7;
-  /* Creative Purple */
-  --color-accent-hover: #9333ea;
-  --color-danger: #ef4444;
+  /* Brand Colors — mapped to Theomax tokens */
+  --color-primary: var(--thm-accent);           /* #00f03c — neon green          */
+  --color-primary-hover: #00d634;               /* Slightly dimmed on hover      */
+  --color-accent: var(--thm-accent);            /* Unified — single brand color  */
+  --color-accent-hover: #00d634;
+  --color-danger: #e53e3e;                      /* Avoids pure red #ef4444       */
 
-  /* Backgrounds - Strict Dark Mode */
-  --bg-app: #050505;
-  /* Deepest Black */
-  --bg-panel: #0a0a0a;
-  /* Panel Background */
-  --bg-card: #141414;
-  /* Card/Input Background */
-  --bg-glass: rgba(10, 10, 10, 0.8);
+  /* Backgrounds — Theomax deep forest palette */
+  --bg-app: var(--thm-background);              /* #0b0f08                       */
+  --bg-panel: var(--thm-surface);               /* #121a0c                       */
+  --bg-card: var(--thm-surface-raised);         /* #16240f                       */
+  --bg-glass: rgba(11, 15, 8, 0.85);
 
-  /* Text */
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #52525b;
+  /* Text — AAA compliant */
+  --text-primary: var(--thm-text-primary);      /* #fafdf8                       */
+  --text-secondary: var(--thm-text-secondary);  /* #ceffbd                       */
+  --text-muted: var(--thm-font-muted);          /* #fafdf8 (AAA safe)            */
 
-  /* UI Elements */
-  --border-color: #27272a;
-  --border-light: rgba(255, 255, 255, 0.1);
+  /* UI Elements — Teal border */
+  --border-color: var(--thm-border);            /* #1D9E75                       */
+  --border-light: var(--thm-border-subtle);     /* #1a3d28                       */
 
-  --border-radius-sm: 6px;
-  --border-radius-md: 10px;
-  --border-radius-lg: 16px;
-  --border-radius-xl: 24px;
-  --border-radius-full: 9999px;
+  --border-radius-sm: var(--thm-border-radius-sm);
+  --border-radius-md: var(--thm-border-radius-md);
+  --border-radius-lg: var(--thm-border-radius-lg);
+  --border-radius-xl: var(--thm-border-radius-xl);
+  --border-radius-full: var(--thm-border-radius-full);
 
-  /* Effects */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 20px rgba(176, 251, 93, 0.4);
-  --shadow-glow-accent: 0 0 20px rgba(168, 85, 247, 0.4);
+  /* Effects — static only, no animation */
+  --shadow-sm: var(--thm-shadow-sm);
+  --shadow-md: var(--thm-shadow-md);
+  --shadow-lg: var(--thm-shadow-lg);
+  --shadow-glow: var(--thm-shadow-glow);
+  --shadow-glow-accent: var(--thm-shadow-glow);  /* Unified glow                */
   --backdrop-blur: blur(20px);
 
-  /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transitions — minimal, no animation */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
 
-  /* Typography */
-  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Typography — Outfit */
+  --font-family: var(--thm-font-family);        /* 'Outfit', sans-serif          */
 }

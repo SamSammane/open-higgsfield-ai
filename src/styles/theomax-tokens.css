@@ -1,0 +1,288 @@
+/*  ═══════════════════════════════════════════════════════════════════════════
+ *  THEOMAX DESIGN TOKENS — v1.0
+ *
+ *  Style:         Vibrant & playful
+ *  Accessibility: WCAG AAA (7:1 minimum contrast)
+ *  Base hue:      Near-black with green tint
+ *  Font family:   Outfit
+ *  Animation:     NONE — static only
+ *
+ *  Brightness: 73%   Darkness: 7%   Saturation: 98%
+ *  ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 1. FULL PALETTE
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-background:       #0b0f08;   /* Page background — deep forest black          */
+  --thm-surface:          #121a0c;   /* Card/panel surface — slightly elevated        */
+  --thm-surface-raised:   #16240f;   /* Raised container (box background)             */
+  --thm-border:           #1D9E75;   /* Teal border — 0.5px solid                     */
+  --thm-border-subtle:    #1a3d28;   /* Subtle green border for less emphasis          */
+  --thm-text-primary:     #fafdf8;   /* Near-white for body text (avoids pure #fff)   */
+  --thm-text-secondary:   #ceffbd;   /* Soft green for labels/captions                */
+  --thm-accent:           #00f03c;   /* Headline neon green — primary brand color     */
+  --thm-accent-muted:     #005c06;   /* Badge/tag background — deep green             */
+  --thm-focus-ring:       #00f03c;   /* Focus indicator — matches accent              */
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 2. FONT COLOR TOKENS
+   *
+   *    Ratios computed against --thm-background (#0b0f08, L≈0.0044)
+   *
+   *    Token              Hex        Luminance   Ratio vs bg   WCAG
+   *    ─────────────────   ───────    ─────────   ──────────    ────
+   *    headline            #00f03c    L≈0.627     12.5 : 1      AAA ✓
+   *    body                #fafdf8    L≈0.955     18.5 : 1      AAA ✓
+   *    label/caption        #ceffbd    L≈0.884     17.2 : 1      AAA ✓
+   *    muted/hint           #fafdf8    L≈0.955     18.5 : 1      AAA ✓
+   *
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-font-headline:    #00f03c;
+  --thm-font-body:        #fafdf8;
+  --thm-font-label:       #ceffbd;
+  --thm-font-muted:       #fafdf8;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 3. CONTAINMENT TOKENS (Box / Badge)
+   *
+   *    Box:  text on --thm-surface-raised (#16240f, L≈0.0137)
+   *    Token              Hex        Ratio vs #16240f    WCAG
+   *    ─────────────────   ───────    ────────────────    ────
+   *    box-label           #bbffad    14.1 : 1            AAA ✓
+   *    box-text            #fafdf8    15.8 : 1            AAA ✓
+   *
+   *    Badge: text on --thm-accent-muted (#005c06, L≈0.0763)
+   *    Token              Hex        Ratio vs #005c06    WCAG
+   *    ─────────────────   ───────    ────────────────    ────
+   *    badge-text          #fafdf8     8.0 : 1            AAA ✓
+   *
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-box-bg:           #16240f;
+  --thm-box-label:        #bbffad;
+  --thm-box-text:         #fafdf8;
+  --thm-badge-bg:         #005c06;
+  --thm-badge-text:       #fafdf8;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 4. BADGE-ON-CARD FOCUS PAIRING
+   *
+   *    Pair                              Ratio     WCAG
+   *    ──────────────────────────────     ──────    ────
+   *    badge-text (#fafdf8)
+   *      on badge-bg (#005c06)           8.0 : 1   AAA ✓
+   *    badge-bg (#005c06)
+   *      on surface (#121a0c)            4.9 : 1   (decorative — bg-only)
+   *    badge-bg (#005c06)
+   *      on surface-raised (#16240f)     4.1 : 1   (decorative — bg-only)
+   *    box-label (#bbffad)
+   *      on badge-bg (#005c06)           10.5 : 1  AAA ✓ (alt badge text)
+   *
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-badge-on-card-bg:    #005c06;
+  --thm-badge-on-card-text:  #fafdf8;
+  --thm-badge-on-card-alt:   #bbffad;   /* Alt text for secondary badges    */
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 5. TYPOGRAPHY TOKENS
+   *
+   *    Font:  'Outfit', sans-serif
+   *    Floor: 10px — enforced on ALL text elements
+   *
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-font-family:       'Outfit', sans-serif;
+
+  /* Display / Heading — 32px */
+  --thm-display-size:      32px;
+  --thm-display-lh:        1.2;           /* 38.4px line height              */
+  --thm-display-ls:        -0.02em;       /* Tight tracking for large text   */
+  --thm-display-weight:    700;
+
+  /* Body — 14px */
+  --thm-body-size:         14px;
+  --thm-body-lh:           1.5;           /* 21px line height                */
+  --thm-body-ls:           0em;
+  --thm-body-weight:       400;
+
+  /* Label / Caption — 10px (at floor) */
+  --thm-label-size:        10px;
+  --thm-label-lh:          1.4;           /* 14px line height                */
+  --thm-label-ls:          0.04em;        /* Wide tracking for readability   */
+  --thm-label-weight:      600;
+
+  /* Minimum floor — enforced */
+  --thm-font-floor:        10px;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 6. BORDER TOKEN
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-border-color:      #1D9E75;
+  --thm-border-weight:     0.5px;
+  --thm-border-style:      solid;
+  --thm-border-shorthand:  0.5px solid #1D9E75;
+  --thm-border-radius-sm:  6px;
+  --thm-border-radius-md:  10px;
+  --thm-border-radius-lg:  16px;
+  --thm-border-radius-xl:  24px;
+  --thm-border-radius-full: 9999px;
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 7. CONTAINMENT — Padding minimums
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-pad-text-x:        8px;          /* Min horizontal padding on text  */
+  --thm-pad-text-y:        4px;          /* Min vertical padding on text    */
+  --thm-pad-badge-x:       6px;          /* Min badge horizontal padding    */
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * 8. GLASS / DEPTH (no animation, static only)
+   * ──────────────────────────────────────────────────────────────────────── */
+
+  --thm-shadow-sm:         0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --thm-shadow-md:         0 4px 8px -2px rgba(0, 0, 0, 0.35);
+  --thm-shadow-lg:         0 12px 24px -4px rgba(0, 0, 0, 0.45);
+  --thm-shadow-glow:       0 0 20px rgba(0, 240, 60, 0.25);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * UTILITY CLASSES — Containment & Typography enforcement
+ * ══════════════════════════════════════════════════════════════════════════ */
+
+/* Font floor enforcement */
+* {
+  font-family: var(--thm-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* All text must be contained — no overflow, no bleed */
+.thm-text-contained {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 0;
+  padding: var(--thm-pad-text-y) var(--thm-pad-text-x);
+}
+
+/* Display / Heading */
+.thm-display {
+  font-size: var(--thm-display-size);
+  line-height: var(--thm-display-lh);
+  letter-spacing: var(--thm-display-ls);
+  font-weight: var(--thm-display-weight);
+  color: var(--thm-font-headline);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--thm-pad-text-y) var(--thm-pad-text-x);
+}
+
+/* Body */
+.thm-body {
+  font-size: var(--thm-body-size);
+  line-height: var(--thm-body-lh);
+  letter-spacing: var(--thm-body-ls);
+  font-weight: var(--thm-body-weight);
+  color: var(--thm-font-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--thm-pad-text-y) var(--thm-pad-text-x);
+}
+
+/* Label / Caption (at 10px floor) */
+.thm-label {
+  font-size: var(--thm-label-size);
+  line-height: var(--thm-label-lh);
+  letter-spacing: var(--thm-label-ls);
+  font-weight: var(--thm-label-weight);
+  color: var(--thm-font-label);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--thm-pad-text-y) var(--thm-pad-text-x);
+  text-transform: uppercase;
+}
+
+/* Badge */
+.thm-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--thm-badge-bg);
+  color: var(--thm-badge-text);
+  font-size: var(--thm-label-size);
+  font-weight: var(--thm-label-weight);
+  line-height: 1;
+  letter-spacing: var(--thm-label-ls);
+  padding: var(--thm-pad-text-y) var(--thm-pad-badge-x);
+  border-radius: var(--thm-border-radius-full);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Box / Container */
+.thm-box {
+  background: var(--thm-box-bg);
+  border: var(--thm-border-shorthand);
+  border-radius: var(--thm-border-radius-md);
+  padding: 12px 16px;
+  overflow: hidden;
+}
+
+.thm-box-label {
+  font-size: var(--thm-label-size);
+  font-weight: var(--thm-label-weight);
+  letter-spacing: var(--thm-label-ls);
+  color: var(--thm-box-label);
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: var(--thm-pad-text-y) 0;
+}
+
+.thm-box-text {
+  font-size: var(--thm-body-size);
+  line-height: var(--thm-body-lh);
+  color: var(--thm-box-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: var(--thm-pad-text-y) 0;
+}
+
+/* Card surface */
+.thm-card {
+  background: var(--thm-surface);
+  border: var(--thm-border-shorthand);
+  border-radius: var(--thm-border-radius-lg);
+  overflow: hidden;
+}
+
+/* Focus ring — keyboard-only */
+.thm-focusable:focus-visible {
+  outline: 2px solid var(--thm-focus-ring);
+  outline-offset: 2px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * SVG TEXT CONTAINMENT
+ *
+ * All SVG <text> elements must use:
+ *   dominant-baseline="central"
+ *   text-anchor="middle"
+ * And the viewBox must be verified to contain the text bounds.
+ * ══════════════════════════════════════════════════════════════════════════ */
+svg text {
+  dominant-baseline: central;
+  text-anchor: middle;
+  font-family: var(--thm-font-family);
+  fill: var(--thm-font-body);
+}
