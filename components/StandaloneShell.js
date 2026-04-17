@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ImageStudio, VideoStudio, LipSyncStudio, CinemaStudio, getUserBalance } from 'studio';
 import ApiKeyModal from './ApiKeyModal';
+import EnginesStatus from './EnginesStatus';
 
 const TABS = [
   { id: 'image',   label: 'Image Studio' },
@@ -103,6 +104,8 @@ export default function StandaloneShell() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
+          <EnginesStatus />
+
           <div className="flex items-center gap-3 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 transition-colors">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <div className="flex flex-col">
